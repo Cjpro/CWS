@@ -42,9 +42,9 @@ void Logger::Impl::formatTime()
     struct timeval tv;
     time_t time;
     char str_t[26] = {0};
-    gettimeofday (&tv, NULL);
+    gettimeofday (&tv, NULL);       //陈硕在书中推荐使用该函数
     time = tv.tv_sec;
-    struct tm* p_time = localtime(&time);   
+    struct tm* p_time = localtime(&time);     //得到从epoch时间到现在的时间
     strftime(str_t, 26, "%Y-%m-%d %H:%M:%S\n", p_time);
     stream_ << str_t;
 }
