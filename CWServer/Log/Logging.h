@@ -22,7 +22,7 @@ public:
     static std::string getLogFileName() { return logFileName_; }
 
 private:
-    class Impl {
+    class Impl {   //pimpl惯用法
     public:
         Impl(const char *fileName, int line);
         void formatTime();
